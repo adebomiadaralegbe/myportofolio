@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/2543b06443.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: poppins;
+        }
+        body{
+            background-color: rgb(122, 113, 113);
+        }
+        :root{
+            --body-color:var(--body-color)
+        }
+        nav{
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+        nav ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        nav ul li{
+            list-style-type: none;
+            margin: 40px;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        nav ul li a:hover{
+            color: red;
+        }
+        nav h1{
+            color: yellow;
+            font-size: 30px;
+        }
+        nav span{
+            color: red;
+        }
+        .contactes button{
+            background-color: red;
+            border-radius: 9px;
+            height: 40px;
+            width: 110px;
+            border: 2px solid black;
+
+            
+            
+        }
+        /* ==============Hero-Section==================== */
+        #hero-section{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-left: 30px;
+        }
+        .hero-right h1{
+            font-size: 60px;
+            letter-spacing: 2px;
+        }
+        .hero-right h1 span{
+            -webkit-text-stroke: 2px yellow;
+            color: transparent;
+        }
+        .hero-right p{
+            font-size: 35px;
+            padding-block: 40px;
+
+        }
+        .hero-right button{
+            background-color: red;
+            border: none;
+            height: 56px;
+            border-radius: 10px;
+        }
+        .hero-right button:hover{
+            background-color: green;
+        }
+        .hero-right button a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 20px 10px;
+            font-weight: 500;
+        }
+        .hero-left img{
+            width: 400px;
+        }
+        #about-section{
+            background-color: white;
+            display: flex;
+            z-index: 5;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 90px;
+        }
+        .about-right h2{
+            font-size: 60px;
+            letter-spacing: 2px;
+        }
+        .about-right h4{
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+        .about-right h3{
+            color: red;
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+        .about-right p{
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+        .about-right .water-mark{
+            font-size: 80px;
+            letter-spacing: 8px;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke: rgb(134, 128, 128) 1px;
+            position: absolute;
+            top: 60rem;
+            z-index: 0;
+        }
+        .about-right h2 span{
+            -webkit-text-stroke: 2px yellow;
+            color: transparent;
+        }
+        .about-left img{
+            width: 400px;
+            height: 500px;
+            border-radius: 5px;
+        }
+        .child{
+            margin-top: 25px;
+        }
+        .same{
+            display: flex;
+            align-items: center;
+            justify-self: center;
+            gap: 12px;
+        }
+        .word{
+            font-size: 40px;
+        }
+        /* .box{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        #con{
+            display: flex;
+            margin-left: 30%;
+        } */
+        .text{
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        #my-work{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-block: 40px;
+        }
+        .project-work{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+        .work{
+            background-color: red;
+            margin: 2px;
+            width: 350px;
+            height: 300px;
+            position: relative;
+        }
+        .work img{
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+        }
+        .visit{
+            background: linear-gradient(rgba(233, 233, 6, 0.445), rgba(255, 0, 0, 0.5));
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            transition: 2s;
+        }
+        .visit a{
+            color: white;
+            margin-top: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            background-color: rgba(194, 226, 11, 0.788);
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+        .visit:hover{
+            opacity: 1;
+        }
+        .visit a:hover{
+            background-color: rgba(255, 0, 0, 0.692);
+        }
+        .row{
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-left: 10%;
+            margin-top: 20px;
+            
+
+        }
+        .row .col .skill{
+            width: 220px;
+            height: 220px;
+            position: relative;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            box-shadow: 5px 5px 15px rgb(0, 0, 0),
+                        -5px -5px 15px rgb(0, 0, 0);
+        }
+        .row .col:nth-child(1) .skill{
+            background: conic-gradient(yellow 95%, transparent 0);
+        }
+        .row .col:nth-child(2) .skill{
+            background: conic-gradient(yellow 86%, transparent 0);
+        }
+        .row .col:nth-child(3) .skill{
+            background: conic-gradient(yellow 72%, transparent 0);
+        }
+        .row .col .skill::before{
+            content: '';
+            position: absolute;
+            width: 85%;
+            height: 85%;
+            background: black;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            box-shadow: 5px 5px 15px rgb(0, 0, 0) inset,
+                        -5px -5px 15px rgb(0, 0, 0) inset;
+        }
+        .row .col .skill .content{
+          color: yellow;
+          position: absolute;
+          font-size: 25px;
+          font-weight: 500;
+          text-align: center;
+          user-select: none;  
+        }
+        .row .col .skill .content span{
+            display: block;
+            padding: 5px 0;
+            letter-spacing: 2px;
+        }
+        #skillrex{
+            background-color: white;
+        
+        }
+        .contact{
+            min-height: 100vh;
+            background-color: gray;
+            padding: 50px;
+            text-align: center;
+            
+        }
+        .container{
+            max-width: 1200px;
+            margin:0 auto;
+        }
+        .container h2{
+            font-size: 56px;
+            margin-bottom: 40px;
+            color: black;
+        }
+        .contact-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 80px;
+        }
+        .contact-form{
+            text-align: left;
+        }
+        .contact-form h3{
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: black;        
+        }
+        .form-group{
+            margin-bottom: 20px;
+        }
+        input{
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: #f8f9fa;
+            color: black;
+        }
+        textarea{
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: #f8f9fa;
+            color: black;
+        }
+        input:focus, 
+        textarea:focus{
+            outline: none;
+            box-shadow: 0 0 8px #bbb;
+        }
+        button{
+            display: block;
+            padding: 12px;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 20%;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+        .contact-info{
+            text-align: left;
+        }
+        .contact-info h3{
+            font-size: 44px;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .contact-info p{
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: black;
+        }
+        .contact-info i{
+            color: #4caf50;
+            margin-right: 10px;
+        }
+        .foot{
+            font-size: 30px;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <nav>
+                <h1 class="logo">B<span>OMI</span></h1>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Work</a></li>
+                    <li><a href="">Skill</a></li>
+                    <li><a href="">Contact</a></li>
+                    
+                </ul>
+            </nav>
+        </header><br><br><br><br><br><br>
+
+        <section id="hero-section">
+            <div class="hero-right">
+                <h1><span>Hello</span> I'm <br> Adebomi Adaralegbe</h1>
+                <p>A professional Frontend Developer And <br> Imaginative 
+                Designer. That Specialize in <br> creating Friendly User Interface</p>
+                <button><a href="$">Learn More</a></button>
+            </div>
+
+            <div class="hero-left">
+                <img src="small.png" width="300px">
+            </div>
+        </section><br><br><br><br>
+        
+
+        <section id="about-section">
+
+        <div class="about-left">
+            <img src="small.png" width="300px">
+        </div>
+
+        <div class="about-right">
+            <h1 class="water-mark">ABOUT</h1>
+            <h2>I'm <span>Adebomi</span></h2>
+            <h4>Am A Creative Designer And Developer</h4>
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Ipsum doloribus praesentium <br>officia incidunt corporis eligendi possimus <br>similique vitae, quae consectetur, blanditiis <br>repellat reiciendis nisi! Harum laboriosam <br>deleniti quod asperiores doloribus, assumenda <br>quisquam tempore itaque ad quia, magnam rem <br>doloremque. Sapiente.</p>
+
+            <div class="child">
+                <div class="same">
+                    <h3>Full Name :</h3>
+                    <p>Adebomi Adaralegbe</p>
+                </div>
+                <div class="same">
+                    <h3>Email :</h3>
+                    <p>Adeadara123@gmail.com</p>
+                </div>
+                <div class="same">
+                    <h3>Mobile :</h3>
+                    <p>+2349130386894</p>
+                </div>
+            </div>
+        </div>
+
+        
+        </section>
+
+        <!-- <section id="whatido">
+            <center>
+                <h1 class="word">MY WORK </h1>
+           </center>
+           <div id="con">
+           <div class="box">
+               <center>
+                   <h1>FRONTEND</h1>
+               </center>
+           </div>
+           <div class="box">
+               <center>
+                   <h1>FRONTEND</h1>
+               </center>
+           </div> 
+           <div class="box">
+               <center>
+                   <h1>FRONTEND</h1>
+               </center>
+           </div>
+           </div>
+           <div id="con">
+               <div class="box">
+                   <center>
+                       <h1>FRONTEND</h1>
+                   </center>
+               </div>
+               <div class="box">
+                   <center>
+                       <h1>FRONTEND</h1>
+                   </center>
+               </div> 
+               <div class="box">
+                   <center>
+                       <h1>FRONTEND</h1>
+                   </center>
+               </div>
+           </div>
+      </div>
+
+        </section> -->
+        <section id="my-work">
+            <h1 class="text">Recent Project</h1>
+            <div class="project-work">
+                <div class="work">
+                    <img src="Insideimage2.jpg" alt="">
+                    <div class="visit">
+                        <h1>Love Code</h1>
+                        <a href="">Visit website <i class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Insideimage2.jpg" alt="">
+                    <div class="visit">
+                        <h1>Love Code</h1>
+                        <a href="">Visit website <i class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Insideimage2.jpg" alt="">
+                    <div class="visit">
+                        <h1>Love Code</h1>
+                        <a href="">Visit website <i class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Insideimage2.jpg" alt="">
+                    <div class="visit">
+                        <h1>Love Code</h1>
+                        <a href="">Visit website <i class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Insideimage2.jpg" alt="">
+                    <div class="visit">
+                        <h1>Love Code</h1>
+                        <a href="">Visit website <i class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Insideimage2.jpg" alt="">
+                    <div class="visit">
+                        <h1>Love Code</h1>
+                        <a href="">Visit website <i class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="skillrex">
+            <center>
+                <h1 class="word">SKILLS</h1>
+            </center>
+            <div class="row">
+               <div class="col">
+                <div class="skill">
+                    <div class="content">
+                        <span>95%</span>
+                        <span>HTML</span>
+                    </div>
+                </div>
+               </div>
+               <div class="col">
+                <div class="skill">
+                    <div class="content">
+                        <span>86%</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+               </div>
+               <div class="col">
+                <div class="skill">
+                    <div class="content">
+                        <span>72%</span>
+                        <span>JAVASCRIPT</span>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </section>
+        <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <h3>Send Us A Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                           <textarea name="message" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fa-solid fa-phone"></i>+2349130386894</p>
+                    <p><i class="fa-solid fa-envelope"></i>Adeadara123@gmail.com</p>
+                    <p><i class="fa-brands fa-whatsapp"></i>09130386894</p>
+                </div>
+            </div>
+        </div>    
+        </section>
+        <section>
+            <div>
+                <center>
+                    <footer class="foot">@copyright2024</footer>
+                </center>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
